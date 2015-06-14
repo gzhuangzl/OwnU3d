@@ -43,3 +43,7 @@ Temporary Items
 .apdisk
 Temp/*
 Library/*
+*.sln
+*.userprefs
+Assembly-CSharp-vs.csproj
+*.csproj

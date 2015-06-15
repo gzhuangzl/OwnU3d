@@ -23,9 +23,9 @@ namespace Game{
 		}
 		
 		private void t(int eventType,object eventData){
-			Debug.Log(Application.dataPath);
-			Debug.Log(GUID.GetNumber());
-			Debug.Log(GUID.GetString());
+			Log.WriteLog(Application.dataPath);
+			Log.WriteWarning(GUID.GetNumber());
+			Log.WriteError(GUID.GetString());
 //			List<int> l = new List<int>(1);
 //			l.Add(1);
 //			l.Add(2);

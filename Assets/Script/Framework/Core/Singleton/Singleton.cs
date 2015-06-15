@@ -11,7 +11,7 @@ namespace Framework
 			if(instance == null){
 				instance = this;
 			}else{
-				throw new SingletonException();
+				throw new SingletonException("重复创建了"+typeof(T)+"的对象");
 			}
 		}
 		

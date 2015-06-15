@@ -13,7 +13,7 @@ namespace Game
 {
 	public class TestSingleton:Singleton<TestSingleton>
 	{
-		public TestSingleton ()
+		public TestSingleton ():base()
 		{
 		}
 	}

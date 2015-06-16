@@ -1,0 +1,8 @@
+Time.timeScale 	1.不会影响Update LaterUpdate，粒子效果，它们只跟帧频挂钩，你timeScale值无论怎么改，帧频不受影响
+
+		2.影响FixedUpdate,Time.time,Time.deltaTime，如果想获取真实的时间，可以用Time.timeSinceLevelLoad，
+		  但必须要在Awake之后取，否则会报错。
+
+		3.会影响声音的正常播放，声音最好忽略这个值的变化,使AudioSource.pitch = 1成常态值，不设置会跟着timeSacle变化
+		
+		4.timeScale = 0时，粒子效果会非常卡，但它的变化，不会对播放速度产生影响，但是为0时会变的非常卡

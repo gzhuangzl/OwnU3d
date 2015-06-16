@@ -1,0 +1,2 @@
+1.TimeScale 对定时器的影响，它可对Time.TimeScale产生影响，也可以只对ITimer产生影响
+2.秒定时器的实现

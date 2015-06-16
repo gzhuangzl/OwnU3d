@@ -11,7 +11,7 @@ namespace Framework
 		
 		public static ulong GetNumber(){
 			if(IdCount == ulong.MaxValue){
-				throw new GUIDException("数字型UID已生成到unlong的表示极限，无法生成");
+				throw new GUIDException("数字型UID已生成到ulong的表示极限，无法生成");
 			}
 			return IdCount++;
 		}

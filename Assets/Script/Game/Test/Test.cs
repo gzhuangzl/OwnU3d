@@ -9,6 +9,7 @@ namespace Game{
 
 	public class Test : MonoBehaviour {
 		private int count = 0;
+		protected event TimerHandler handlers;
 		// Use this for initialization
 		void Start () {
 			EventDispatcher.Instance.AddListener(1,t);

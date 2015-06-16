@@ -17,13 +17,14 @@ namespace Framework
 		
 		public LogRecorder ():base()
 		{
+			String fileName = DateTime.Now.ToString("yyyy-MM-dd") + "----Log.log";
 			if(Application.platform == RuntimePlatform.OSXEditor ||
 				Application.platform == RuntimePlatform.OSXPlayer ||
 				Application.platform == RuntimePlatform.WindowsEditor ||
 				Application.platform == RuntimePlatform.WindowsPlayer){
-				LogFilePath = Application.dataPath + "/../Log.log";
+				LogFilePath = Application.dataPath + "/../" + fileName;
 			}else{
-				LogFilePath = Application.persistentDataPath + "/Log.log";
+				LogFilePath = Application.persistentDataPath + "/" + fileName;
 			}
 		}
 		

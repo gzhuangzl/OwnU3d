@@ -9,18 +9,26 @@ namespace Game{
 
 	public class Test : MonoBehaviour {
 		private int count = 0;
-		protected event TimerHandler handlers;
+		
+		void Awake(){
+			Framework.Framework.Startup(gameObject);
+		}
 		// Use this for initialization
 		void Start () {
 			EventDispatcher.Instance.AddListener(1,t);
+			
+			ITimer timer = FrameTimer.Create(1,100);
+			timer.AddTickListener((ITimer tt,bool isFinish)=>{
+				Debug.Log(count++ + isFinish.ToString());
+			});
 		}
 		
 		// Update is called once per frame
 		void Update () {
-			EventDispatcher.Instance.Dispatcher(1,new object());
-			if(count++ > 10){
-				EventDispatcher.Instance.RemoveListener(1,t);
-			}
+//			EventDispatcher.Instance.Dispatcher(1,new object());
+//			if(count++ > 10){
+//				EventDispatcher.Instance.RemoveListener(1,t);
+//			}
 		}
 		
 		private void t(int eventType,object eventData){

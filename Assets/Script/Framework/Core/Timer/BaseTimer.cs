@@ -12,6 +12,10 @@ namespace Framework
 		protected BaseTimer ()
 		{
 			id = GUID.GetNumber();
+			
+			if(handlers != null){
+				handlers.Invoke(this,false);
+			}
 		}
 		
 		public ulong GetId()
@@ -77,14 +81,24 @@ namespace Framework
 		{
 			handlers += handler;
 		}
+		
 		public virtual void RemoveTickListener(TimerHandler handler)
 		{
 			handlers -= handler;
 		}
+		
 		public virtual void RemoveAllListener()
 		{
 			handlers = null;
 		}
+		
+		protected void DispatcherTick(bool isFinish)
+		{
+			if(handlers != null){
+				handlers.Invoke(this,isFinish);
+			}
+		}
+		
 		public virtual void Dispose()
 		{
 			RemoveAllListener();

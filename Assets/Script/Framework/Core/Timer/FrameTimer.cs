@@ -5,14 +5,18 @@ namespace Framework
 	{
 		protected int frameInterval = 1;
 		protected int frameCount = 0;
+		protected ulong totalTimes = 0;
+		protected ulong passTimes = 0;
 		
-		protected FrameTimer (int frameInterval):base(){
+		public FrameTimer (int frameInterval,ulong totalTimes):base(){
 			this.frameInterval = frameInterval;
+			this.totalTimes = totalTimes;
 		}
 		
-		public static FrameTimer Create(int frameInterval = 1,bool isAutoStartup = true){
-			FrameTimer timer = ObjectPool.GetObject<FrameTimer>(frameInterval);
+		public static FrameTimer Create(int frameInterval = 1,ulong totalTimes = ulong.MaxValue,bool isAutoStartup = true){
+			FrameTimer timer = ObjectPool.GetObject<FrameTimer>(frameInterval,totalTimes);
 			timer.frameInterval = frameInterval;
+			timer.totalTimes = totalTimes;
 			
 			if(isAutoStartup){
 				timer.Startup();
@@ -39,6 +43,8 @@ namespace Framework
 			base.Reset ();
 			frameInterval = 1;
 			frameCount = 0;
+			totalTimes = 0;
+			passTimes = 0;
 		}
 		
 		public override void Tick (float deltaTime)
@@ -47,8 +53,11 @@ namespace Framework
 			frameCount++;
 			if(frameCount / frameInterval > 0){
 				frameCount -= frameInterval;
-				if(handlers != null){
-					handlers.Invoke(this,false);
+				if(++passTimes >= totalTimes){
+					DispatcherTick(true);
+					Dispose();
+				}else{
+					DispatcherTick(false);
 				}
 			}
 		}
@@ -58,6 +67,8 @@ namespace Framework
 			base.Dispose ();
 			frameInterval = 1;
 			frameCount = 0;
+			totalTimes = 0;
+			passTimes = 0;
 			
 			ObjectPool.DisposeObject(this);
 		}

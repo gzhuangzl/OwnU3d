@@ -17,7 +17,7 @@ namespace Framework
 				mainGameObject.transform.SetParent(null);
 			}
 			//挂靠一些依赖GameObject的框架类
-			
+			mainGameObject.AddComponent<TimerManager>();
 		}
 	}
 }

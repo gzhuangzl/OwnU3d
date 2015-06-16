@@ -8,18 +8,20 @@ namespace Framework
 	public sealed class TimerManager : MonoBehaviourSingleton<TimerManager>
 	{
 		private Dictionary<ulong,ITimer> timerMaps;
-		private List<ulong> sortTimerList;
+		private List<ulong> timerNaturalOrderList;
+		private List<ulong> nextFrameRemoveTimerList;
 		
 		protected override void Awake (){
 			base.Awake ();
 			
 			timerMaps = new Dictionary<ulong, ITimer>();
-			sortTimerList = new List<ulong>();
+			timerNaturalOrderList = new List<ulong>();
+			nextFrameRemoveTimerList = new List<ulong>();
 		}
 		
 		void Update(){
 			ITimer timer;
-			foreach(ulong id in sortTimerList){
+			foreach(ulong id in timerNaturalOrderList){
 				timerMaps.TryGetValue(id,out timer);
 				if(timer != null && !timer.IsStop() && !timer.IsPause()){
 					timer.Tick(Time.deltaTime);
@@ -29,29 +31,42 @@ namespace Framework
 		
 		public void AddTimer(ITimer timer){
 			if(timer != null){
+				//在移除列表则从中移出
+				int index = nextFrameRemoveTimerList.IndexOf(timer.GetId());
+				if(index >= 0){
+					nextFrameRemoveTimerList.RemoveAt(index);
+				}
 				ITimer temp;
 				timerMaps.TryGetValue(timer.GetId(),out temp);
 				if(temp == null){
 					timerMaps.Add(timer.GetId(),timer);
-					sortTimerList.Add(timer.GetId());
+					timerNaturalOrderList.Add(timer.GetId());
 				}
 			}
 		}
 		
 		public void RemoveTimer(ITimer timer){
 			if(timer != null){
-				RemoveTimer(timer.GetId());
+				nextFrameRemoveTimerList.Add(timer.GetId());
 			}
 		}
 		
 		public void RemoveTimer(ulong timerId){
+			nextFrameRemoveTimerList.Add(timerId);
+		}
+		
+		private void RemoveTimer(){
 			ITimer timer;
-			timerMaps.TryGetValue(timerId,out timer);
-			if(timer != null){
-				timerMaps.Remove(timerId);
-				sortTimerList.Remove(timerId);
-				timer.Dispose();
+			foreach(ulong timerId in nextFrameRemoveTimerList){
+				timerMaps.TryGetValue(timerId,out timer);
+				if(timer != null){
+					timerMaps.Remove(timerId);
+					timerNaturalOrderList.Remove(timerId);
+					timer.Dispose();
+				}
 			}
+			
+			nextFrameRemoveTimerList.Clear();
 		}
 		
 		public void RemoveAllTimer(){
@@ -59,7 +74,8 @@ namespace Framework
 				pair.Value.Dispose();
 			}
 			timerMaps.Clear();
-			sortTimerList.Clear();
+			timerNaturalOrderList.Clear();
+			nextFrameRemoveTimerList.Clear();
 		}
 		
 		public void Clear(){

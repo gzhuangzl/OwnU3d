@@ -17,16 +17,16 @@ namespace Game{
 		void Start () {
 			EventDispatcher.Instance.AddListener(1,t);
 			
-			ITimer timer = FrameTimer.Create(1,100);
+			ITimer timer = SecondTimer.Create(1,5);
 			timer.AddTickListener((ITimer tt,bool isFinish)=>{
 				Debug.Log(count++ + isFinish.ToString());
 			});
-			Time.timeScale = 3;
+//			Time.timeScale = 3;
 		}
 		
 		// Update is called once per frame
 		void Update () {
-			Debug.Log(DateTime.Now.ToFileTime());
+//			Debug.Log(DateTime.Now.ToFileTime());
 //			EventDispatcher.Instance.Dispatcher(1,new object());
 //			if(count++ > 10){
 //				EventDispatcher.Instance.RemoveListener(1,t);

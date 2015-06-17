@@ -1,26 +1,20 @@
-using System;
+﻿using UnityEngine;
+
 namespace Framework
 {
-	public class FrameTimer : BaseTimer
-	{
-		protected int frameInterval = 1;
-		protected int frameCounter = 0;
-		protected ulong totalCounter = 0;
-		protected ulong passCounter = 0;
+	public class SecondTimer : BaseTimer {
+		protected float timeInterval = 0;
+		protected float totalCounter = 0;
+		protected float passCounter = 0;
 		
-		public FrameTimer ():base(){
-			
+		public SecondTimer():base(){
+		
 		}
-		/// <summary>
-		/// 创建一个帧定时器
-		/// </summary>
-		/// <param name="frameInterval">Frame interval.</param>
-		/// <param name="totalTimes">Total times.</param>
-		/// <param name="isAutoStartup">If set to <c>true</c> is auto startup.</param>
-		public static FrameTimer Create(int frameInterval = 1,ulong totalCounter = ulong.MaxValue,bool isAutoStartup = true)
+		
+		public static SecondTimer Create(float secondInterval = 1f,ulong totalCounter = ulong.MaxValue,bool isAutoStartup = true)
 		{
-			FrameTimer timer = ObjectPool.GetObject<FrameTimer>();
-			timer.frameInterval = frameInterval;
+			SecondTimer timer = ObjectPool.GetObject<SecondTimer>();
+			timer.timeInterval = secondInterval;
 			timer.totalCounter = totalCounter;
 			
 			if(isAutoStartup){
@@ -46,8 +40,7 @@ namespace Framework
 		public override void Reset ()
 		{
 			base.Reset ();
-			frameInterval = 1;
-			frameCounter = 0;
+			timeInterval = 1;
 			totalCounter = 0;
 			passCounter = 0;
 		}
@@ -59,9 +52,8 @@ namespace Framework
 				return;
 			}
 			base.Tick (deltaTime);
-			frameCounter++;
-			if(frameCounter / frameInterval > 0){
-				frameCounter -= frameInterval;
+			if(passTime / timeInterval > 0){
+				passTime -= timeInterval;
 				if(++passCounter >= totalCounter){
 					DispatcherTick(true);
 					Dispose();
@@ -74,8 +66,7 @@ namespace Framework
 		public override void Dispose ()
 		{
 			base.Dispose ();
-			frameInterval = 1;
-			frameCounter = 0;
+			timeInterval = 1;
 			totalCounter = 0;
 			passCounter = 0;
 			

@@ -75,6 +75,7 @@ namespace Framework
 			{
 				throw new TimerException(this.GetType().ToString() + "已经暂时或停止，不允许触发Tick");
 			}
+			passTime += deltaTime;
 		}
 		
 		public virtual void AddTickListener(TimerHandler handler)

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Framework
 {
-	public class SecondTimer : BaseTimer {
+	public class SecondTimer : AbstractTimer {
 		protected float timeInterval = 0;
 		protected float totalCounter = 0;
 		protected float passCounter = 0;

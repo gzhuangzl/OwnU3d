@@ -1,6 +1,6 @@
-1.AnimatorStateInfo.fullPathHash ¶¯»­¿ØÖÆÆ÷µÄ²ãÃû+×´Ì¬»úÃû Éú³ÉµÄhash
-2.AnimatorStateInfo.shortNameHash ×´Ì¬»úÃûÉú³ÉµÄhash£¬1£¬2¶¼ÊÇÓÉAnimator.StringToHash()Éú³É
+ï»¿1.AnimatorStateInfo.fullPathHash åŠ¨ç”»æŽ§åˆ¶å™¨çš„å±‚å+çŠ¶æ€æœºå ç”Ÿæˆçš„hash
+2.AnimatorStateInfo.shortNameHash çŠ¶æ€æœºåç”Ÿæˆçš„hashï¼Œ1ï¼Œ2éƒ½æ˜¯ç”±Animator.StringToHash()ç”Ÿæˆ
 
-3.AnimatorStateInfo.normalizedTime ¹Ì¶¨Öµ²¿·Ö´ú±íÑ­»·µÄ´ÎÊý£¬°Ù·Ö±È´ú±íµ±Ç°´ÎÊý²¥·ÅµÄ½ø¶È
+3.AnimatorStateInfo.normalizedTime å›ºå®šå€¼éƒ¨åˆ†ä»£è¡¨å¾ªçŽ¯çš„æ¬¡æ•°ï¼Œç™¾åˆ†æ¯”ä»£è¡¨å½“å‰æ¬¡æ•°æ’­æ”¾çš„è¿›åº¦
 
-3.AnimatorStateInfo.length ´ú±í×´Ì¬»úµ¥´Î¶¯»­²¥·ÅµÄÊ±¼ä
+3.AnimatorStateInfo.length ä»£è¡¨çŠ¶æ€æœºå•æ¬¡åŠ¨ç”»æ’­æ”¾çš„æ—¶é—´

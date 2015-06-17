@@ -1,7 +1,7 @@
 using System;
 namespace Framework
 {
-	public class FrameTimer : BaseTimer
+	public class FrameTimer : AbstractTimer
 	{
 		protected int frameInterval = 1;
 		protected int frameCounter = 0;

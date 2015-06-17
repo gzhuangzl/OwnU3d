@@ -1,7 +1,7 @@
 
 namespace Framework
 {
-	public abstract class BaseTimer : ITimer,IReusable
+	public abstract class AbstractTimer : ITimer,IReusable
 	{
 		protected readonly ulong id;
 		protected event TimerHandler handlers;
@@ -9,7 +9,7 @@ namespace Framework
 		protected bool isPause = false;
 		protected float passTime = 0f;
 		
-		protected BaseTimer ()
+		protected AbstractTimer ()
 		{
 			id = GUID.GetNumber();
 			

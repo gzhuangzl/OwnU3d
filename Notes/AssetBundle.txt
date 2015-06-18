@@ -1,3 +1,3 @@
-1.AssetBundle ÔÚ·ÇAssets/StreamingAssetsÄ¿Â¼ÖĞµÄ×ÊÔ´¶¼¿ÉÒÔÖ¸¶¨ËüËùÊôµÄbundleÃû³Æ
-		×¢£ºÔÚAssets/StreamingAssetsÄ¿Â¼ÖĞµÄ×ÊÔ´Ö¸¶¨Ò²ÊÇÎŞĞ§µÄ£¬ÒòÎª
-		BuildPipeline.BuildAssetBundles()ÔÚ´ò°üAssetBundleÊ±»áºöÂÔ´ËÄ¿Â¼µÄ×ÊÔ´
+ï»¿1.AssetBundle åœ¨éAssets/StreamingAssetsç›®å½•ä¸­çš„èµ„æºéƒ½å¯ä»¥æŒ‡å®šå®ƒæ‰€å±çš„bundleåç§°
+		æ³¨ï¼šåœ¨Assets/StreamingAssetsç›®å½•ä¸­çš„èµ„æºæŒ‡å®šä¹Ÿæ˜¯æ— æ•ˆçš„ï¼Œå› ä¸º
+		BuildPipeline.BuildAssetBundles()åœ¨æ‰“åŒ…AssetBundleæ—¶ä¼šå¿½ç•¥æ­¤ç›®å½•çš„èµ„æº

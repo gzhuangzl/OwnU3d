@@ -26,6 +26,7 @@ namespace Game{
 		
 		// Update is called once per frame
 		void Update () {
+//			Debug.Log(Resources.Load("placeholder"));
 //			Debug.Log(DateTime.Now.ToFileTime());
 //			EventDispatcher.Instance.Dispatcher(1,new object());
 //			if(count++ > 10){

@@ -1,0 +1,3 @@
+1.AssetBundle 在非Assets/StreamingAssets目录中的资源都可以指定它所属的bundle名称
+		注：在Assets/StreamingAssets目录中的资源指定也是无效的，因为
+		BuildPipeline.BuildAssetBundles()在打包AssetBundle时会忽略此目录的资源

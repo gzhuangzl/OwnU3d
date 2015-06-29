@@ -1,7 +1,7 @@
-¶ÔÓÚÃ¿Ò»¸ö¶¯»­ÎÄ¼þ(.fbx)£¬Èç¹ûËü°üº¬¶à¸ö¶¯×÷Ö¡ÏµÁÐ£¬¶øÃÀÊõÖ»ÊÇ¸øÁËÒ»¸öÍêÕûµÄÖ¡ÏµÁÐ
+ï»¿å¯¹äºŽæ¯ä¸€ä¸ªåŠ¨ç”»æ–‡ä»¶(.fbx)ï¼Œå¦‚æžœå®ƒåŒ…å«å¤šä¸ªåŠ¨ä½œå¸§ç³»åˆ—ï¼Œè€Œç¾Žæœ¯åªæ˜¯ç»™äº†ä¸€ä¸ªå®Œæ•´çš„å¸§ç³»åˆ—
 
-ÔòÐèÇóÓÐÒ»Ãûxx_AnimationConfig.xmlÅäÖÃÎÄ¼þ£¬Óë.fbxÎªÍ¬¼¶Ä¿Â¼
+åˆ™éœ€æ±‚æœ‰ä¸€åxx_AnimationConfig.xmlé…ç½®æ–‡ä»¶ï¼Œä¸Ž.fbxä¸ºåŒçº§ç›®å½•
 
-xxÎª.fbxµÄÎÄ¼þÃû£¨²»°üº¬ºó×º£©
+xxä¸º.fbxçš„æ–‡ä»¶åï¼ˆä¸åŒ…å«åŽç¼€ï¼‰
 
-ÏêÏ¸ÎÄ¼þÄ£ÐÍÇë¼ûxx_AnimationConfig.xml
+è¯¦ç»†æ–‡ä»¶æ¨¡åž‹è¯·è§xx_AnimationConfig.xml

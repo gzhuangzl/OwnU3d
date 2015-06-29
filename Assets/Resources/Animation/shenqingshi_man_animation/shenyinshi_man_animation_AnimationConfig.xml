@@ -1,0 +1,14 @@
+<root>
+	<animation name="idle" startFrame="0" endFrame="80" isLoop="true"/>
+	<animation name="attack" startFrame="83" endFrame="123"/>
+	<animation name="skill1" startFrame="126" endFrame="278">
+		<frameEvent eventName="moveTo" startFrame="164" endFrame="167"/>
+		<frameEvent eventName="comeBack" startFrame="247" endFrame="262"/>
+	</animation>
+	<animation name="hit" startFrame="281" endFrame="301"/>
+	<animation name="die" startFrame="304" endFrame="355"/>
+	<animation name="run" startFrame="355" endFrame="382"/>
+	<animation name="skill2" startFrame="385" endFrame="445"/>
+	<animation name="skill3" startFrame="448" endFrame="550"/>
+	<animation name="frozen" startFrame="553" endFrame="585"/>
+</root>

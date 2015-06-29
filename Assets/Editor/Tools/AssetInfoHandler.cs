@@ -5,7 +5,7 @@ namespace Cutomization
 {
 	public class AssetInfoHandler
 	{
-		[MenuItem("Tool/Generate Asset Version Info")]
+		[MenuItem("Tools/Generate Asset Version Info")]
 		public static void GenerateAssetVersionInfo ()
 		{
 //			SvnClient client = new SvnClient();

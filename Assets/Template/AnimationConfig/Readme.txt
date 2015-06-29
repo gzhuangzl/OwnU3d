@@ -1,0 +1,7 @@
+对于每一个动画文件(.fbx)，如果它包含多个动作帧系列，而美术只是给了一个完整的帧系列
+
+则需求有一名xx_AnimationConfig.xml配置文件，与.fbx为同级目录
+
+xx为.fbx的文件名（不包含后缀）
+
+详细文件模型请见xx_AnimationConfig.xml

@@ -49,17 +49,28 @@ namespace Framework
             }
             else
             {
-                target = new T[requiredNum];
-                for (int leftNum = sourceSet.Length; leftNum > 0; leftNum--)
+                if(requiredNum <= 0)
                 {
-                    float prob = requiredNum / (float)leftNum;
-                    if(UnityEngine.Random.value <= prob)
+                    target = new T[0];
+                }
+                else if(requiredNum == 1)
+                {
+                    target = new T[] { sourceSet[UnityEngine.Random.Range(0,sourceSet.Length - 1)]};
+                }
+                else
+                {
+                    target = new T[requiredNum];
+                    for (int leftNum = sourceSet.Length; leftNum > 0; leftNum--)
                     {
-                        target[--requiredNum] = sourceSet[leftNum - 1];
-
-                        if(requiredNum == 0)
+                        float prob = requiredNum / (float)leftNum;
+                        if (UnityEngine.Random.value <= prob)
                         {
-                            break;
+                            target[--requiredNum] = sourceSet[leftNum - 1];
+
+                            if (requiredNum == 0)
+                            {
+                                break;
+                            }
                         }
                     }
                 }

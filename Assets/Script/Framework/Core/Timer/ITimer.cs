@@ -2,8 +2,6 @@ using System;
 
 namespace Framework
 {
-	public delegate void TimerHandler(ITimer timer,bool isFinish);
-	
 	public interface ITimer : IEquatable<ITimer>
 	{
 		ulong GetId();

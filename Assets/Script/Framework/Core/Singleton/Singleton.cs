@@ -17,9 +17,12 @@ namespace Framework
 		
 		public static T Instance{
 			get{
-				if(instance == null){
-					lock(lockObject){
-						if(instance == null){
+				if(instance == null)
+                {
+					lock(lockObject)
+                    {
+						if(instance == null)
+                        {
 							new T();
 						}
 					}

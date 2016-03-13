@@ -1,8 +1,6 @@
 using System;
 namespace Framework
 {
-	public delegate void EventListenerFunction(int eventType,object userData);
-	
 	public enum EventListenerTimes{
 		Once,
 		Forever

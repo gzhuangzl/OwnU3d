@@ -34,9 +34,11 @@ namespace Framework
 			}
 		}
 		
-		public void Dispatcher(int eventType,object eventData = null){
+		public void Dispatcher(int eventType,object eventData = null)
+        {
 			EventListener listener = GetEventListener(eventType);
-			if(listener != null){
+			if(listener != null)
+            {
 				listener.Dispatcher(eventData);
 			}
 		}
@@ -44,7 +46,8 @@ namespace Framework
 		public bool Has (int eventType, EventListenerFunction funtion)
 		{
 			EventListener listener = GetEventListener(eventType);
-			if(listener != null){
+			if(listener != null)
+            {
 				return listener.Has(funtion);
 			}
 			return false;
@@ -52,7 +55,8 @@ namespace Framework
 		
 		public void Clear ()
 		{
-			foreach(KeyValuePair<int,EventListener> pair in eventListenerList){
+			foreach(KeyValuePair<int,EventListener> pair in eventListenerList)
+            {
 				pair.Value.Clear();
 			}
 			eventListenerList.Clear();
@@ -61,7 +65,8 @@ namespace Framework
 		private EventListener GetEventListener(int eventType,bool isAutoCreate = false){
 			EventListener info;
 			eventListenerList.TryGetValue(eventType,out info);
-			if(info == null && isAutoCreate){
+			if(info == null && isAutoCreate)
+            {
 				info = new EventListener(eventType);
 				eventListenerList.Add(eventType,info);
 			}
